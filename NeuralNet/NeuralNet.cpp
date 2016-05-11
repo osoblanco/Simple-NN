@@ -40,10 +40,11 @@ void NeuralNet::fforward(const vector<double> &inputValues)
         LayerOfNet &previousLayer = layers[layerNum-1];
         for(unsigned neuronNum = 0; neuronNum <layers[layerNum].size() - 1;neuronNum++)
         {
-            layers[layerNum][neuronNum].feedForward(previousLayer); //preactivating using activation of previous neurons
+            layers[layerNum][neuronNum].feedForward(previousLayer); //preactivating using activation of previous neurons + activating
         }
         
     }
+    
 }
 
 

@@ -44,7 +44,6 @@ public:
     void backprop(const vector<double> &targetedValues);
     void retrieveResults(vector<double> &retriveValues) const;
     double getRecentAverageError(void) const { return recentAverageNetError; }
-    
 };
 
 
