@@ -65,7 +65,7 @@ void NeuralNet::backprop(const vector<double> &targetedValues)
     for(unsigned n = 0; n < outputLayer.size() - 1 ;n++)
     {
         double delta = targetedValues[n] - outputLayer[n].getOutputValue();
-        netError = delta * delta;
+        netError += delta * delta;
     }
     
     netError /= outputLayer.size() - 1;
