@@ -36,6 +36,8 @@
 		036354531CE27BE800634503 /* NeuralNet */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NeuralNet; sourceTree = BUILT_PRODUCTS_DIR; };
 		036354561CE27BE800634503 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		03DB7D851CE3EEDD00CC4F5D /* SACdata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACdata.csv; sourceTree = "<group>"; };
+		B5CA088A1CE4FFD400819C46 /* test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.csv; sourceTree = "<group>"; };
+		B5CA088B1CE4FFD400819C46 /* train.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = train.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,8 @@
 				03070E331CE2A7D80061CAEC /* Neuron.hpp */,
 				03070E2D1CE29CB60061CAEC /* train.txt */,
 				03DB7D851CE3EEDD00CC4F5D /* SACdata.csv */,
+				B5CA088A1CE4FFD400819C46 /* test.csv */,
+				B5CA088B1CE4FFD400819C46 /* train.csv */,
 			);
 			path = NeuralNet;
 			sourceTree = "<group>";
