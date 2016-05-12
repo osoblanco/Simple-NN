@@ -82,7 +82,7 @@ void Neuron::feedForward(const LayerOfNet previousLayer)
 Neuron:: Neuron(unsigned numberOfOutputs, unsigned neuronIndex)
 {
     
-    for(unsigned connectionCount=0; connectionCount < numberOfOutputs; connectionCount++)
+    for(unsigned connectionCount = 0; connectionCount < numberOfOutputs; connectionCount++)
     {
         outgoingWeights.push_back(Connection());
         outgoingWeights.back().weights = initialWeight();
@@ -91,14 +91,22 @@ Neuron:: Neuron(unsigned numberOfOutputs, unsigned neuronIndex)
     neuron_index = neuronIndex;
 }
 
+double sigmoid(double x)
+{
+    return 1/(1+exp(-x));
+}
+
 
 double Neuron::activationFunction(double preactivation)
 {
+    
     return tanh(preactivation);
+  //  return sigmoid(preactivation);
 }
 
 double Neuron::activationFunctionDerivative(double x)
 {
     return 1.0 -x*x;
-}
+   // return sigmoid(x)*(1-sigmoid(x)); use for sigmoid output
 
+}

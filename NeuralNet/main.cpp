@@ -114,173 +114,113 @@ int main() {
     
     
   
-//
-//    
-//    vector<vector<double> > values;
-//    vector<double> valueline;
-//    ifstream fin("/Users/norairarakelian/Desktop/Neural Net/Simple-NN/NeuralNet/SACdata.csv");
-//    string item;
-//    for (string line; getline(fin, line); )
-//    {
-//        istringstream in(line);
-//        
-//        while (getline(in, item, ','))
-//        {
-//            valueline.push_back(atof(item.c_str()));
-//        }
-//        
-//        values.push_back(valueline);
-//        valueline.clear();
-//    }
-//    
-//    
-//    vector<unsigned> Constructoptions;
+
+    /* Student Alchohol Consumption Dataset
+     
+    vector<vector<double> > values;
+    vector<double> valueline;
+    ifstream fin("/Users/norairarakelian/Desktop/Neural Net/Simple-NN/NeuralNet/SACdata.csv");
+    string item;
+    for (string line; getline(fin, line); )
+    {
+        istringstream in(line);
+        
+        while (getline(in, item, ','))
+        {
+            valueline.push_back(atof(item.c_str()));
+        }
+        
+        values.push_back(valueline);
+        valueline.clear();
+    }
+    
+    
+    vector<unsigned> Constructoptions;
+    Constructoptions.push_back(values[1].size() - 3);
+//    Constructoptions.push_back(3);
+//    Constructoptions.push_back(9);
+//    Constructoptions.push_back(27);
+    Constructoptions.push_back(1);
+    Constructoptions.push_back(2);
+    Constructoptions.push_back(4);
+    Constructoptions.push_back(4);
+    Constructoptions.push_back(4);
+
+
+
+   // Constructoptions.push_back(rand()%50);
+   // Constructoptions.push_back(rand()%50);
+
+//    Constructoptions.push_back(27);
+//    Constructoptions.push_back(9);
+//    Constructoptions.push_back(3);
+
+
 //    Constructoptions.push_back(values[1].size() - 3);
-////    Constructoptions.push_back(3);
-////    Constructoptions.push_back(9);
-////    Constructoptions.push_back(27);
-//    Constructoptions.push_back(1);
-//    Constructoptions.push_back(2);
-//    Constructoptions.push_back(4);
-//    Constructoptions.push_back(4);
-//    Constructoptions.push_back(4);
-//
-//
-//
-//   // Constructoptions.push_back(rand()%50);
-//   // Constructoptions.push_back(rand()%50);
-//
-////    Constructoptions.push_back(27);
-////    Constructoptions.push_back(9);
-////    Constructoptions.push_back(3);
-//
-//
-////    Constructoptions.push_back(values[1].size() - 3);
-////    Constructoptions.push_back(values[1].size() - 3);
-////    Constructoptions.push_back(values[1].size() - 3);
-//    
-//    Constructoptions.push_back(1);
-//
-//    
-//    NeuralNet SACNet(Constructoptions);
-//
-//    // 50 - 5 - 1 Neuralnet
-//
-//
-//    
-//    cout<<values.size()<<endl;
-//    cout<<values[1].size()<<endl;
-//    
-//    for(int epoch = 0 ; epoch<=1000; epoch++)
-//    {
-//    for (int trainex = 1 ; trainex <= values.size() - 10 ; trainex++)
-//    {
-//        vector<double> inputVals, targetVals, resultVals;
-//
-//        //giving the input values to the net
-//        for (unsigned long input = 0; input<values[trainex].size() - 3; input++)
-//        {
-//            inputVals.push_back(values[trainex][input]);
-//        }
-//        
-//        //giving the targeted values to the net
-//        for (unsigned long target = values[trainex].size() - 1; target<values[trainex].size(); target++)
-//        {
-//            if(values[trainex][target] >= 15 )
-//            {
-//                targetVals.push_back(1);
-//            }
-//            else
-//            {
-//                targetVals.push_back(0);
-//            }
-//        }
-//        
-//        
-//        SACNet.fforward(inputVals);
-//        
-//        // Collect the net's actual output results:
-//        SACNet.retrieveResults(resultVals);
-//        showVectorVals("Outputs:", resultVals);
-//
-//        
-//        // Train the net what the outputs should have been:
-//        showVectorVals("Targets:", targetVals);
-//        assert(targetVals.size() == Constructoptions.back());
-//        
-//        SACNet.backprop(targetVals);
-//        
-//        // Report how well the training is working, average over recent samples:
-//        cout << "Net recent average error: "
-//        << SACNet.getRecentAverageError() << endl;
-//        
-//    }
-//        cout<<"epoch "<<epoch<<" ended"<<endl;
-//        cout<<endl;
-//
-//    }
-//    
-//    
-//    // Now lets test the net on ME :)
-//    // I already added myself scaled to the last row of the dataset
-//    
-//    /*
-//    vector<double> inputVals,resultVals;
-//    //giving the input values to the net
-//    for (unsigned long input = 0; input<values[values.size() - 1].size() - 3; input++)
-//    {
-//        inputVals.push_back(values[values.size() - 1][input]);
-//    }
-//    
-//    SACNet.fforward(inputVals);
-//    // Collect the net's actual output results:
-//    SACNet.retrieveResults(resultVals);
-//    showVectorVals("Outputs:", resultVals);
-//    
-//    
-//    // i passed the course really :) with A
-//    cout<< "Target is 0"<<endl;
-//    
-//    cout << "Net recent average error: "
-//    << SACNet.getRecentAverageError() << endl;
-//     */
-//    
-//    
-//    for (int testex = values.size() - 9 ; testex <= values.size() -1; testex++)
-//    {
-//        vector<double> inputVals,resultVals,targetVals;
-//        //giving the input values to the net
-//        for (unsigned long input = 0; input<values[testex].size() - 3; input++)
-//        {
-//            inputVals.push_back(values[testex][input]);
-//        }
-//        
-//        for (unsigned long target = values[testex].size() - 1; target<values[testex].size(); target++)
-//        {
-//            if(values[testex][target] >= 14 )
-//            {
-//                targetVals.push_back(1);
-//            }
-//            else
-//            {
-//                targetVals.push_back(0);
-//            }
-//        }
-//
-//        SACNet.fforward(inputVals);
-//        // Collect the net's actual output results:
-//        SACNet.retrieveResults(resultVals);
-//        showVectorVals("Outputs:", resultVals);
-//        
-//        showVectorVals("Targets:", targetVals);
-//        
-//        cout << "Net recent average error: "
-//        << SACNet.getRecentAverageError() << endl;
-//        
-//
-//    }
-//    
-//    
+//    Constructoptions.push_back(values[1].size() - 3);
+//    Constructoptions.push_back(values[1].size() - 3);
+    
+    Constructoptions.push_back(1);
+
+    
+    NeuralNet SACNet(Constructoptions);
+
+    // 50 - 1-2-4-4- 1 Neuralnet
+
+
+    
+    cout<<values.size()<<endl;
+    cout<<values[1].size()<<endl;
+    
+    for(int epoch = 0 ; epoch<=1000; epoch++)
+    {
+    for (int trainex = 1 ; trainex <= values.size() - 10 ; trainex++)
+    {
+        vector<double> inputVals, targetVals, resultVals;
+
+        //giving the input values to the net
+        for (unsigned long input = 0; input<values[trainex].size() - 3; input++)
+        {
+            inputVals.push_back(values[trainex][input]);
+        }
+        
+        //giving the targeted values to the net
+        for (unsigned long target = values[trainex].size() - 1; target<values[trainex].size(); target++)
+        {
+            if(values[trainex][target] >= 15 )
+            {
+                targetVals.push_back(1);
+            }
+            else
+            {
+                targetVals.push_back(0);
+            }
+        }
+        
+        
+        SACNet.fforward(inputVals);
+        
+        // Collect the net's actual output results:
+        SACNet.retrieveResults(resultVals);
+        showVectorVals("Outputs:", resultVals);
+
+        
+        // Train the net what the outputs should have been:
+        showVectorVals("Targets:", targetVals);
+        assert(targetVals.size() == Constructoptions.back());
+        
+        SACNet.backprop(targetVals);
+        
+        // Report how well the training is working, average over recent samples:
+        cout << "Net recent average error: "
+        << SACNet.getRecentAverageError() << endl;
+        
+    }
+        cout<<"epoch "<<epoch<<" ended"<<endl;
+        cout<<endl;
+
+    }
+    */
     
     
     vector<vector<double> > values;
@@ -344,6 +284,7 @@ int main() {
                             targetVals.push_back(0);
                         }
                     }
+                    
                 }
         
         
@@ -351,6 +292,19 @@ int main() {
         
                 // Collect the net's actual output results:
                 SACNet.retrieveResults(resultVals);
+                /*
+                int maxProb = 0;
+                int maxIndex = 0;
+                for(int v = 0 ; v<10;v++)
+                {
+                    if(resultVals[v]>maxProb)
+                    {
+                        maxProb = resultVals[v];
+                        maxIndex = v;
+                    }
+                }
+                */
+                
                 showVectorVals("Outputs:", resultVals);
         
         
