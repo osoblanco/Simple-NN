@@ -21,7 +21,7 @@ This is a class that is responsible for constructing the main computational unit
 
 1. The class includes the functionality for feeding forward (preactivating, activating) the single Neuron.
 2. The class includes the functionality for the computation of all the gradients for each neuron.
-3.functionality for updating each neuron's parametrs(weights,biases) in the oposite direction of the stepest descent is provided
+3. The class includes the functionality for updating each neuron's parametrs(weights,biases) in the direction of the steepest descent.
 
 -------------
 
