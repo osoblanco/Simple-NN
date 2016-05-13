@@ -42,8 +42,9 @@ void showVectorVals(string label, vector<double> &v)
 
 int main() {
     
-    /*  simple initial tester
-     
+    //____________________________  simple initial tester ____________________________
+
+    /*
      
     vector <unsigned> Constructoptions; //specify the net structure EX:3-2-1
     Constructoptions.push_back(3);
@@ -68,9 +69,11 @@ int main() {
     
     
     
-     /* XOR training for neural network
     
-    TrainingData trainData("/Users/Erik/Desktop/NeuralNet/NeuralNet/train.txt");
+    //____________________________  XOR training for neural network____________________________
+
+     /*
+      TrainingData trainData("/Users/Erik/Desktop/NeuralNet/NeuralNet/train.txt"); // feed the direct path
     
     // e.g., { 3, 2, 1 }
     vector<unsigned> Constructoptions;
@@ -109,17 +112,24 @@ int main() {
     }
     
     cout << endl << "Done" << endl;
+      
     */
     
     
     
-  
+    
+    
+    
+    
+    //____________________________ Student Alchohol Consumption Dataset TRAINING____________________________
 
-    /* Student Alchohol Consumption Dataset
+
+    /*
      
     vector<vector<double> > values;
     vector<double> valueline;
-    ifstream fin("/Users/norairarakelian/Desktop/Neural Net/Simple-NN/NeuralNet/SACdata.csv");
+     ifstream fin("/Users/norairarakelian/Desktop/Neural Net/Simple-NN/NeuralNet/SACdata.csv"); // feed the direct path
+
     string item;
     for (string line; getline(fin, line); )
     {
@@ -223,9 +233,18 @@ int main() {
     */
     
     
+    
+    
+    
+    
+    
+    
+    //____________________________ MNIST TRAINING____________________________
+    
+    /*
     vector<vector<double> > values;
     vector<double> valueline;
-    ifstream fin("/Users/norairarakelian/Desktop/Neural Net/Simple-NN/NeuralNet/train.csv");
+    ifstream fin("/Users/norairarakelian/Desktop/Neural Net/Simple-NN/NeuralNet/train.csv"); // feed the direct path
     string item;
     for (string line; getline(fin, line); )
     {
@@ -292,18 +311,7 @@ int main() {
         
                 // Collect the net's actual output results:
                 SACNet.retrieveResults(resultVals);
-                /*
-                int maxProb = 0;
-                int maxIndex = 0;
-                for(int v = 0 ; v<10;v++)
-                {
-                    if(resultVals[v]>maxProb)
-                    {
-                        maxProb = resultVals[v];
-                        maxIndex = v;
-                    }
-                }
-                */
+               
                 
                 showVectorVals("Outputs:", resultVals);
         
@@ -324,7 +332,7 @@ int main() {
         
             }
         
-        
+        */
     
         
 
