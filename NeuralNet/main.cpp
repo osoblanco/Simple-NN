@@ -258,7 +258,7 @@ int main() {
         // 50 - 5 - 1 Neuralnet
     
     
-    for(int epoch = 0 ; epoch<1; epoch++)
+    for(int epoch = 0 ; epoch<1; epoch++) //optimal epoch number is between [100, 1000] cahnge to see true results
     {
             for (int trainex = 1 ; trainex <= values.size() - 10 ; trainex++)
             {

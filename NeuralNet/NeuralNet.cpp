@@ -81,7 +81,7 @@ void NeuralNet::backprop(const vector<double> &targetedValues)
     
     for(unsigned n = 0; n < outputLayer.size() - 1 ; n++)
     {
-        outputLayer[n].calaculateOutputGradient(targetedValues[n]);
+        outputLayer[n].calaculateOutputGradient(targetedValues[n], layers);
     }
     
     

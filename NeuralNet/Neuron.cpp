@@ -54,11 +54,27 @@ void Neuron:: calculateHiddenGradients(const LayerOfNet &nextLayer)
     gradient = derOfWeights * Neuron::activationFunctionDerivative(outputValue);
 }
 
-void Neuron:: calaculateOutputGradient(double targetedValues)
+void Neuron:: calaculateOutputGradient(double targetedValues, vector <LayerOfNet> layers)
 {
     double delta = targetedValues - outputValue;
     gradient = delta * activationFunctionDerivative(outputValue);
     
+    
+    /*
+    double regularizationL2 = 0.0;
+    int overalCount = 0;
+    for(int i = 0; i <layers.size()-1; i++ )
+        for(int j=0; j<layers[i].size()-1;j++)
+        {
+            regularizationL2 += layers[i][j].outgoingWeights[neuron_index].weights;
+            overalCount++;
+        }
+    
+    regularizationL2 /= overalCount;
+    
+    regularizationL2 *= 0.002;
+    gradient -= regularizationL2;
+    */
 }
 
 

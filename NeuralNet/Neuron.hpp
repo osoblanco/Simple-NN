@@ -52,7 +52,7 @@ public:
     double getOutputValue(){return outputValue;}
     
     //gradients
-    void calaculateOutputGradient(double targetedValues);
+    void calaculateOutputGradient(double targetedValues, vector <LayerOfNet> layers);
     void calculateHiddenGradients(const LayerOfNet &nextLayer);
     void updateInputWeights(LayerOfNet &previousLayer); //updates the weights it feeds from
     
